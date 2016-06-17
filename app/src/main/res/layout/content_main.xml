@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <leo.com.androidmvp.BannerLayout
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:autoPlayDuration="5000"
+            app:defaultImage="@mipmap/ic_launcher"
+            app:indicatorMargin="10dp"
+            app:indicatorPosition="rightBottom"
+            app:indicatorShape="rect"
+            app:indicatorSpace="3dp"
+            app:scrollDuration="900"
+            app:selectedIndicatorColor="?attr/colorPrimary"
+            app:selectedIndicatorHeight="6dp"
+            app:selectedIndicatorWidth="6dp"
+            app:unSelectedIndicatorColor="#99ffffff"
+            app:unSelectedIndicatorHeight="6dp"
+            app:unSelectedIndicatorWidth="6dp" />
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_view" />
+
+</android.support.v4.widget.DrawerLayout>
