@@ -2,6 +2,7 @@ package leo.com.androidmvp;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
@@ -22,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.Scroller;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -251,9 +253,16 @@ public class BannerLayout extends RelativeLayout {
         });
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         if (defaultImage != 0){
-            Picasso.with(getContext()).load(url).centerCrop().placeholder(defaultImage).into(imageView);
+            RequestCreator creator = Picasso.with(getContext()).load(url);
+
+                creator.placeholder(defaultImage);
+
+//        ElegantImageLoader.instance().display(context, url, imageView);
+            creator.fit().config(Bitmap.Config.RGB_565).into(imageView);
         }else {
-            Picasso.with(getContext()).load(url).centerCrop().into(imageView);
+//            Picasso.with(getContext()).load(url).into(imageView);
+            RequestCreator creator = Picasso.with(getContext()).load(url);
+            creator.fit().config(Bitmap.Config.RGB_565).into(imageView);
         }
         return imageView;
     }

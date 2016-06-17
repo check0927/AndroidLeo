@@ -11,13 +11,14 @@
         android:layout_height="wrap_content">
         <leo.com.androidmvp.BannerLayout
             android:id="@+id/banner"
+            android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             app:autoPlayDuration="5000"
             app:defaultImage="@mipmap/ic_launcher"
             app:indicatorMargin="10dp"
             app:indicatorPosition="rightBottom"
-            app:indicatorShape="rect"
+            app:indicatorShape="oval"
             app:indicatorSpace="3dp"
             app:scrollDuration="900"
             app:selectedIndicatorColor="?attr/colorPrimary"
